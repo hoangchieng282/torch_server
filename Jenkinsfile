@@ -9,10 +9,10 @@ pipeline{
             }
         }
 
-            stage('Build torchserve image'){
+        stage('Build torchserve image'){
             steps{
                 script {
-                dockerImage = docker.build("hoangchieng/my-test:${env.BUILD_ID}","./deploy")
+                dockerImage = docker.build("hoangchieng/my-test:${env.BUILD_ID}",".")
                 }
                 // sh "docker build -t hoangchieng/nodeapp_test:latest ."
                 // sh "ls"
