@@ -8,9 +8,8 @@ pipeline{
                 sh "docker --version"
             }
         }
-    }
 
-    stage('Build torchserve image'){
+            stage('Build torchserve image'){
             steps{
                 script {
                 dockerImage = docker.build("hoangchieng/my-test:${env.BUILD_ID}","./deploy")
@@ -19,6 +18,9 @@ pipeline{
                 // sh "ls"
             }
         }
+    }
+
+
 
         // stage('Deploy Image') {
         //     agent {
