@@ -18,6 +18,18 @@ pipeline{
                 // sh "ls"
             }
         }
+
+        
+        stage('Deploy Image') {
+
+            steps{
+                script {
+                    docker.withRegistry( '', "DockerHubCred" ) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
     }
         post("Clean up workspace") {
             always {
@@ -27,17 +39,6 @@ pipeline{
 
 
 
-        // stage('Deploy Image') {
-        //     agent {
-        //         label 'build'
-        //     }
-        //     steps{
-        //         script {
-        //             docker.withRegistry( '', "DockerHubCred" ) {
-        //                 dockerImage.push()
-        //             }
-        //         }
-        //     }
-        // }
+
 
 }
