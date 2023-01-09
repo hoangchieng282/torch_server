@@ -19,6 +19,11 @@ pipeline{
             }
         }
     }
+        post("Clean up workspace") {
+            always {
+                cleanWs()
+            }
+        }
 
 
 
