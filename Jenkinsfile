@@ -18,10 +18,7 @@ pipeline{
         stage("test"){
             steps {
                 script {
-                    sh '''
-                    echo params.TRAINNUMBER
-                    ls
-                '''
+                    sh "echo ${params.TRAINNUMBER}"
                 }
                 
 
