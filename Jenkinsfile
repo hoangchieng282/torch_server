@@ -18,7 +18,7 @@ pipeline{
         stage("test"){
             steps {
                 sh '''echo ${params.TRAINNUMBER}
-                    curl http://localhost:8080/job/trim%20training%20demo%20mlops/job/main/lastSuccessfulBuild/artifact/runs.tar.gz
+                    curl http://localhost:8080/job/trim%20training%20demo%20mlops/job/main/${params.TRAINNUMBER}/artifact/runs.tar.gz
                     ls
                 '''
 
