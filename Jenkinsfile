@@ -19,7 +19,7 @@ pipeline{
             steps {
                 script {
                     sh '''
-                    echo ${params.TRAINNUMBER}
+                    echo params.TRAINNUMBER
                     ls
                 '''
                 }
