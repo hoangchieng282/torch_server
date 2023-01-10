@@ -18,7 +18,7 @@ pipeline{
         stage("test"){
             steps {
                 script {
-                    sh "echo ${params.TRAINNUMBER}"
+                    sh "ls /var/jenkins_home/workspace/trim_training_demo_mlops_main"
                 }
                 
 
